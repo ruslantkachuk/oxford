@@ -1,5 +1,5 @@
 {
-  "productName": "angular-electron",
+  "productName": "Oxford 3000",
   "directories": {
     "output": "release/"
   },
@@ -20,19 +20,19 @@
         "!tslint.json"
     ],
   "win": {
-    "icon": "dist",
+    "icon": "dist/icons",
     "target": [
       "portable"
     ]
   },
   "mac": {
-    "icon": "dist",
+    "icon": "dist/icons",
     "target": [
       "dmg"
     ]
   },
   "linux": {
-    "icon": "dist",
+    "icon": "dist/icons",
     "target": [
       "AppImage"
     ]
