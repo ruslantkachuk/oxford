@@ -1,0 +1,122 @@
+.display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 50px 50px auto;
+  height: 100vh;
+
+  .word {
+    border-right: 1px solid rgb(67, 67, 67);
+    border-bottom: 1px solid rgb(67, 67, 67);
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  %transcriptionCommon {
+    border-right: 1px solid rgb(67, 67, 67);
+    border-bottom: 1px solid rgb(67, 67, 67);
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+
+    .transcription{
+      grid-column: 1;
+      grid-row: 1
+    }
+    .flag {
+      width: 50px;
+      height: 30px;
+      margin-right: 10px;
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  .transcriptionUK {
+    @extend %transcriptionCommon;
+    grid-column: 1;
+    grid-row: 2/3;
+  }
+
+  .transcriptionUSA {
+    @extend %transcriptionCommon;
+    grid-column: 1;
+    grid-row: 3/4;
+  }
+
+  .translation {
+    border-bottom: 1px solid rgb(67, 67, 67);
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2;
+    grid-row: 1/4;
+  }
+
+  .translationDetailed {
+    overflow-y: scroll;
+    grid-column: 2/-1;
+    grid-row: 4/ -1;
+    .listBackground {
+      padding: 3px 3px 3px 3px;
+      margin: 3px 3px 3px 3px;
+      background-color: rgb(120, 167, 89);
+    }
+  }
+
+  .wordDefinition {
+    overflow-y: scroll;
+    border-right: 1px solid rgb(67, 67, 67);
+    grid-column: 1/2;
+    grid-row: 4/ -1;
+    .listBackground {
+      padding: 3px 3px 3px 3px;
+      margin: 3px 3px 3px 3px;
+      background-color: rgb(216, 136, 56);
+    }
+  }
+}
+
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  border-bottom: 1px solid rgb(67, 67, 67);
+
+  .purple {
+    padding: 3px 6px 3px 6px;
+    color: rgb(155, 147, 215);
+    grid-column: 1;
+    grid-row: 1/2;
+  }
+
+  .orange {
+    padding: 3px 6px 3px 6px;
+    color: rgb(216, 136, 56);
+    grid-column: 1;
+    grid-row: 2/3;
+  }
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  li {
+    cursor: default;
+  }
+}
+
+.header-word {
+  grid-area: header-word;
+}

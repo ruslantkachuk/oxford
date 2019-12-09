@@ -18,7 +18,8 @@ function createWindow() {
     height: size.height,
     webPreferences: {
       nodeIntegration: true,
-    },
+      webSecurity: false
+    }
   });
 
   if (serve) {
@@ -45,7 +46,6 @@ function createWindow() {
     // when you should delete the corresponding element.
     win = null;
   });
-
 }
 
 try {
@@ -71,6 +71,7 @@ try {
       createWindow();
     }
   });
+  app.name = 'Oxford 3000';
 
 } catch (e) {
   // Catch Error

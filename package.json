@@ -73,5 +73,13 @@
   },
   "engines": {
     "node": ">=10.9.0"
+  },
+  "dependencies": {
+    "@angular/fire": "^5.2.3",
+    "@types/lodash": "^4.14.149",
+    "firebase": "^7.5.0",
+    "ngx-spinner": "^8.0.3",
+    "unzip": "^0.1.11",
+    "unzip-stream": "^0.3.0"
   }
 }

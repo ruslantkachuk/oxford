@@ -1,5 +1,17 @@
-<div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
+<div class="grid-container">
+  <div class="header-word">OXFORD 3000</div>
+  <div class="header-examples">EXAMPLES</div>
+  <div class="word">
+    <ul>
+      <li *ngFor="let wd of getWords()" (click)="onActiveWord(wd)" [class.highlighted]="wd === activeWord">
+        {{wd.word}}
+      </li>
+    </ul>
+  </div>
+  <div class="display">
+    <app-display [word]="activeWord" [state]="activeState"></app-display>
+  </div>
+  <div class="examples">
+    <app-example [word]="activeWord" [state]="activeState"></app-example>
+  </div>
 </div>

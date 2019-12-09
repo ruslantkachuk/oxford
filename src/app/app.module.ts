@@ -17,8 +17,11 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HomeModule } from './home/home.module';
 
 import { AppComponent } from './app.component';
+import {AngularFireModule} from '@angular/fire';
+import {AppConfig} from '../environments/environment';
+import {AngularFireStorageModule, StorageBucket} from '@angular/fire/storage';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
-// AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -39,9 +42,13 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    AngularFireModule.initializeApp(AppConfig.firebase),
+    AngularFireStorageModule
   ],
-  providers: [],
+  providers: [
+    { provide: StorageBucket, useValue: 'gs://oxford3000-f1f66.appspot.com' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

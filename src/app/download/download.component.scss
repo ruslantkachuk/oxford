@@ -1,0 +1,13 @@
+div.download-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .download {
+    cursor: pointer;
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(117, 138, 196);
+    display: inline-block;
+    text-align: center;
+  }
+}

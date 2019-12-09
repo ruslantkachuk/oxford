@@ -4,8 +4,13 @@ import { PageNotFoundComponent } from './shared/components';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
+    redirectTo: 'download',
     pathMatch: 'full'
   },
   {

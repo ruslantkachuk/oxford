@@ -1,0 +1,58 @@
+<div class="display" *ngIf="word">
+  <div [style.display]="displayMap.get(1)" class = "word">
+    {{word.word}}
+ </div>
+  <div [style.display]="displayMap.get(2)" class="transcriptionUK">
+    <img class = "flag" src="assets/images/UK.svg" alt="UK">
+    <div class="transcription">[ {{word.transcriptionUK}} ]</div>
+  </div>
+  <div [style.display]="displayMap.get(3)" class="transcriptionUSA">
+    <img class = "flag" src="assets/images/USA.svg" alt="USA">
+    <div class="transcription">[ {{word.transcriptionUSA}} ]</div>
+  </div>
+  <div [style.display]="displayMap.get(5)" class="translation">
+    {{word.translation}}
+  </div>
+  <div [style.display]="displayMap.get(6)" class="translationDetailed">
+    <ul>
+      <li *ngFor="let td of word.translationDetailed">
+        <div class="listBackground">{{td.pos}}</div>
+          <ul>
+            <li *ngFor="let details of td.details">
+              <div class="details">
+                <div class="purple">
+                  {{details.translateWord}}
+                </div>
+                <div class="orange">
+                  <ul>
+                      <li *ngFor="let df of details.definition">
+                        {{df.phrase}} - {{df.phraseTranslated}}
+                      </li>
+                    </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+      </li>
+    </ul>
+  </div>
+  <div [style.display]="displayMap.get(4)" class="wordDefinition">
+    <ul>
+      <li *ngFor="let df of word.definitions">
+        <div class="listBackground">{{df.pos}}</div>
+        <ul>
+          <li *ngFor="let ent of df.entry">
+            <div class="details">
+              <div class="purple">
+                {{ent.gloss}}
+              </div>
+              <div class="orange">
+                {{ent.example}}
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
