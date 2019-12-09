@@ -7,11 +7,11 @@ import {Word} from '../shared/models/word';
   styleUrls: ['./example.component.scss']
 })
 export class ExampleComponent implements OnChanges {
-  private display: string;
+  display: string;
   @Input()
   private state: number;
   @Input()
-  private word: Word;
+  word: Word;
 
   constructor() {
   }

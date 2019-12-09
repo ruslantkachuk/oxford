@@ -14,7 +14,7 @@ export class DisplayComponent implements OnChanges {
   @Input()
   private state: number;
   @Input()
-  private word: Word;
+  word: Word;
 
   constructor(
     private audioService: AudioService,
